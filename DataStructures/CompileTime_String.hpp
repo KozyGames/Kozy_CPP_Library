@@ -86,7 +86,7 @@ struct CONC_PROXY {
         It is advised to not have an output string that's longer than said value
     */
     template<CONC_PROXY lhs, CONC_PROXY rhs, auto arr = concat_CompileTimeString_Helper<lhs,rhs>()>
-    consteval auto concat_CT() {
+    consteval std::string_view concat_CT() {
         return std::string_view(arr.cbegin(),arr.cend());
     }
 
