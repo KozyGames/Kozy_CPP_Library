@@ -1,5 +1,5 @@
 
-
+.*vscode
 
 *.exe
 *.out
@@ -7,5 +7,4 @@
 *.obj
 *.a
 
-*/build/*
-*/Test/*
+!.gitignore
