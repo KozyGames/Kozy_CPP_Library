@@ -10,11 +10,12 @@ namespace Math {
 
 
 */
-constexpr uint_fast32_t power(uint_fast32_t base, uint_fast32_t exponent) {
-	uint_fast32_t res = 1;
+template<typename NumberT = uint_fast32_t>
+constexpr NumberT power(NumberT base, uint_fast16_t exponent) {
+	NumberT res = 1;
 	
 	while (exponent != 0){
-		if (exponent & 0b01){
+		if (exponent & 0b01){ // is uneven
 			res = res * base;
 		}
 		base = base * base;

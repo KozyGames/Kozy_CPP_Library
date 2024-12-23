@@ -56,7 +56,7 @@ struct Optional_Member{
     constexpr operator const T&()const noexcept requires (is_Active) {
         return m_member;
     }
-    operator T&() noexcept requires (is_Active){
+    operator T&() noexcept requires (is_Active) {
         return m_member;
     }
 
@@ -70,6 +70,7 @@ struct Optional_Member{
         );
         return reinterpret_cast<const T&>(m_member);
     }
+    
     operator T&() requires (!is_Active) {
         throw std::logic_error(
             "Error: OptionalMember.\n"

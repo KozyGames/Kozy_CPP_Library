@@ -177,7 +177,6 @@ public:
 		swapGuard.lock();
 		sleepingWL->emplace_back(std::move(fn));
 		swapGuard.unlock();
-		
 	}
 
 
@@ -185,17 +184,16 @@ public:
 		std::this_thread::sleep_for(std::chrono::microseconds(1));	
 	};
 
-		/*
-			restarts the threadpool and then changes pausingWork function.
-			this might take some time, if the Threadpool is running.
+	/*
+		restarts the threadpool and then changes pausingWork function.
+		this might take some time, if the Threadpool is running.
 			
-		*/
-		template<typename voidFuncT>
-		void set_pausingWork(voidFuncT&& fn = ThreadPool::pausingWork_default) {
-			pausingWork = std::forward<voidFuncT>(fn);
-			restart(worker.size());
-
-		}
+	*/
+	template<typename voidFuncT>
+	void set_pausingWork(voidFuncT&& fn = ThreadPool::pausingWork_default) {
+		pausingWork = std::forward<voidFuncT>(fn);
+		restart(worker.size());
+	}
 
 private:
 
@@ -214,7 +212,7 @@ private:
 	}
 
 
-	struct WorkerThread{
+	struct WorkerThread {
 
 		template<typename voidFuncT>
 		WorkerThread(
