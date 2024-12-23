@@ -1,5 +1,7 @@
 
 .vscode
+notes.txt
+test
 
 *.exe
 *.out
