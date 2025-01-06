@@ -1,12 +1,12 @@
-
 .vscode
 notes.txt
-test
+build
 
 *.exe
 *.out
 *.o
 *.obj
 *.a
+.*
 
 !.gitignore

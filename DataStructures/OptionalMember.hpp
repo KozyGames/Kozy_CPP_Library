@@ -53,7 +53,7 @@ struct Optional_Member{
     constexpr ~Optional_Member(){}
 
    
-    constexpr operator const T&()const noexcept requires (is_Active) {
+    constexpr operator const T&() const noexcept requires (is_Active) {
         return m_member;
     }
     operator T&() noexcept requires (is_Active) {
@@ -61,7 +61,7 @@ struct Optional_Member{
     }
 
 
-    constexpr operator const T&()const requires (!is_Active) {
+    constexpr operator const T&() const requires (!is_Active) {
         throw std::logic_error(
             "Error: OptionalMember.\n"
             "Tried to operate on a not activated object!\n"

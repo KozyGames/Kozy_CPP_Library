@@ -46,7 +46,7 @@ struct CONC_PROXY {
 
     }
 
-    inline static constexpr std::size_t BUFFER_SIZE_MAX = KozyLibrary::Math::power(2,16);
+    inline static constexpr std::size_t BUFFER_SIZE_MAX = KozyLibrary::Math::power<std::size_t>(2,16);
     const std::array<char, BUFFER_SIZE_MAX> arr;
 
     template<typename T> 
@@ -61,11 +61,13 @@ struct CONC_PROXY {
         return arr;
     }
 
-    constexpr operator std::string_view() {
+    constexpr operator std::string_view() const {
         return std::string_view(arr.cbegin(),arr.cend());
     }
 
+
 };
+
     template<CONC_PROXY lhs, CONC_PROXY rhs>
     consteval auto concat_CompileTimeString_Helper() {
      
@@ -116,7 +118,7 @@ struct CONC_PROXY {
         return std::string_view(arr.cbegin(), arr.cend());
     }
 
-    
+
 }
 
 #endif
