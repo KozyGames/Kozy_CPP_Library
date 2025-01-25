@@ -5,5 +5,6 @@
 #include "DataStructures/CompileTime_String.hpp"
 #include "DataStructures/ThreadPool.hpp"
 #include "DataStructures/OptionalMember.hpp"
+#include "DataStructures/Image_PixelArray.hpp"
 
 #endif
